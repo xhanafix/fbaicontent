@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Content AI Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Facebook Content AI Generator</h1>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+        </div>
+        
+        <div class="api-section">
+            <label for="apiKey">OpenRouter API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your API key">
+            <button onclick="saveApiKey()">Save API Key</button>
+        </div>
+
+        <div class="input-section">
+            <label for="productDescription">Product/Service Description:</label>
+            <textarea id="productDescription" placeholder="Describe your product or service..."></textarea>
+            <div class="tone-section">
+                <label>Select Voice Tone:</label>
+                <div class="tone-options">
+                    <div class="tone-option">
+                        <input type="radio" id="professional" name="tone" value="professional" checked>
+                        <label for="professional">Professional</label>
+                    </div>
+                    <div class="tone-option">
+                        <input type="radio" id="casual" name="tone" value="casual">
+                        <label for="casual">Casual & Friendly</label>
+                    </div>
+                    <div class="tone-option">
+                        <input type="radio" id="humorous" name="tone" value="humorous">
+                        <label for="humorous">Humorous</label>
+                    </div>
+                    <div class="tone-option">
+                        <input type="radio" id="inspirational" name="tone" value="inspirational">
+                        <label for="inspirational">Inspirational</label>
+                    </div>
+                    <div class="tone-option">
+                        <input type="radio" id="storytelling" name="tone" value="storytelling">
+                        <label for="storytelling">Storytelling</label>
+                    </div>
+                </div>
+            </div>
+            <div class="language-section">
+                <label>Select Output Language:</label>
+                <div class="language-options">
+                    <div class="language-option">
+                        <input type="radio" id="english" name="language" value="english" checked>
+                        <label for="english">English</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" id="malay" name="language" value="malay">
+                        <label for="malay">Bahasa Malaysia</label>
+                    </div>
+                </div>
+            </div>
+            <button onclick="generateContent()">Generate Content</button>
+        </div>
+
+        <div class="progress-container hidden" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="progress-text" id="progressText">0%</div>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Content</h2>
+            <div id="loadingSpinner" class="spinner hidden"></div>
+            <div id="outputContent" class="output"></div>
+            <button onclick="copyContent()" class="copy-button">Copy Content</button>
+        </div>
+        <footer class="footer">
+            <p>Created with <span class="heart">❤️</span> by 
+                <a href="https://github.com/xhanafix" target="_blank" rel="noopener noreferrer">xhanafix</a> 
+                © 2024
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
